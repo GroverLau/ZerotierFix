@@ -5,7 +5,12 @@ on:
     branches: [ "master", "old-android" ]
   pull_request:
     branches: [ "master" ]
-
+  workflow_dispatch:  # 新增手动触发事件
+    inputs:
+      branch:
+        description: 'Branch to run workflow'
+        required: true
+        default: 'main'
 jobs:
   build:
 
